@@ -1,6 +1,7 @@
 <fieldset class="field-unit--nested">
   <legend><%= f.label field.attribute %></legend>
   <%= f.fields_for field.association_name do |nested_form| %>
+    <div data-controller="places" data-action="google-maps-callback@window->places#initMap" data-places-imageurl-value="#{asset_path 'markergc.png'}">
       <%= render(
         partial: "fields/nested_has_many/fields",
         locals: {
@@ -8,6 +9,7 @@
           field: field,
         },
       ) %>
+    </div>
   <% end %>
 
   <div>
