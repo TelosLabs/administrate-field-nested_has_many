@@ -1,3 +1,4 @@
+<p><%= field.associated_class_name.downcase %></p>
 <% if field.associated_class_name.downcase.include?("location") %>
   <div class="nested-fields" data-controller="places" data-action="google-maps-callback@window->places#initMap" data-places-imageurl-value="<%= asset_path 'markergc.png' %>">
     <% field.nested_fields_for_builder(f).each do |attribute| -%>
