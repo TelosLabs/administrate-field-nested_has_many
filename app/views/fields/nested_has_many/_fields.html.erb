@@ -1,4 +1,4 @@
-<div class="nested-fields" data-controller="places" data-action="google-maps-callback@window->places#initMap" data-places-imageurl-value="#{asset_path 'markergc.png'}">
+<div class="nested-fields" data-controller="<%= 'places' if field.associated_class_name.downcase.include("location") %>" data-action="google-maps-callback@window->places#initMap" data-places-imageurl-value="<%= asset_path 'markergc.png' %>">
   <% field.nested_fields_for_builder(f).each do |attribute| -%>
     <div class="field-unit field-unit--<%= attribute.html_class %>">
       <%= render_field attribute, f: f %>
